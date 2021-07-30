@@ -1,0 +1,46 @@
+div{
+    border-style: solid;
+    border-width: 4px;
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
+}
+
+#border{
+    border-color: blue;
+}
+
+#header{
+    height: 50px;
+}
+
+#maincontent{
+    height: 200px;
+}
+#footer{
+    height: 50px;
+}
+
+h1{
+    color:chartreuse;
+}
+
+h2{
+    font-size: 30pt;
+}
+
+h3{
+    font-family: sans-serif;
+}
+
+h4{
+    font-weight: bold;
+}
+
+h5{
+    text-decoration: underline;
+}
+
+h6{
+    border-style: dashed;
+}
