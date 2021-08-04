@@ -44,3 +44,9 @@ function showTask(){
         document.getElementById("table").innerHTML = tableContent;
     }
 }
+
+function clear(){
+    document.getElementById("client").value = "";
+    document.getElementById("project").value = "";
+    document.getElementById("budget").value = "";
+}
