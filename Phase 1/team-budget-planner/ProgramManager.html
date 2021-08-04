@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Program Manager</title>
+    <script src="storage.js"></script>
+</head>
+<body style="text-align: center;"> 
+    <div style=" text-decoration: underline;">
+        Add New Budget
+    </div>
+    <br>
+    <form>
+        <label>Client Name: </label>
+            <input type="text" id="client"><br>
+        <label>Project Name: </label>
+            <input type="text" id="project"><br>
+        <label>Budget: </label>
+            <input type="number" id="budget"><br><br>
+        <button onclick="addTask()">Add task</button>
+        <button style="display:inline;
+            margin-left: 10px;">Clear</button>
+    </form>
+    <br>
+    <a href="index.html">Back</a>
+</body>
+</html>
