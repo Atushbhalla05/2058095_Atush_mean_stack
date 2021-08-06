@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <script src="blog.js"></script>
+</head>
+<body style="border-style: solid; border-width: 2px; height: 100%;">
+    <h2 style="text-align: center;"> Simply Blogging</h2>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Add Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Contact Us</a>
+        </li>
+    </ul>
+    <div class="container" style="margin-left: 10px;">
+        <form class="form-group">
+            <label class="label-primary">Title</label>
+            <input type="text" name="title" class="form-control" id="title"><br/>
+            <label class="label-primary">Article</label>
+            <input type="text" name="article" class="form-control" id="article"/><br/>
+            <label class="label-secondary">Add Image</label>
+            <input type="text" name="image" class="form-control" id="imageLink"/><br/>
+            <input type="button" value="Add Blog" class="btn btn-primary" onclick="addBlog()"/>
+        </form>
+    </div>
+    <div class="container" id="blogs">
+
+    </div>
+</body>
+</html>

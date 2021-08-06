@@ -1,0 +1,17 @@
+.blog{
+
+    background-color: cornsilk;
+    box-shadow: darkgray;
+    width: 300px; 
+    height: auto; 
+    padding: 10px;
+    margin: 10px;
+}
+img {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
