@@ -1,0 +1,12 @@
+.item{
+
+    background-color: cornsilk;
+    box-shadow: darkgray;
+    border-style: solid;
+    display:grid;
+    border-width: 1px;
+    width: 300px; 
+    height: auto; 
+    padding: 10px;
+    margin: 10px;
+}
