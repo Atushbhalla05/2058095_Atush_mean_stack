@@ -51,9 +51,9 @@
     <h4>Contact Details</h4>
     <table style="display: table; border-style: solid; text-align:right; width: 200px;">
       <tr><th>Name</th><th>Phone No.</th></tr>
-      <div *ngFor="let contact of currEmpInformation.portfolio | keyvalue">
+      <tbody *ngFor="let contact of currEmpInformation.portfolio | keyvalue">
         <tr><td>{{contact.key}}</td><td>{{contact.value}}</td></tr>
-      </div>
+      </tbody>
     </table>
 
   </div>
