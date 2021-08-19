@@ -1,0 +1,60 @@
+<div>
+  <div style="color: white" *ngIf="showLogin">
+      <h2 style = "text-decoration: underline white; 
+      color: white; 
+      text-align: center;">Login Form</h2>
+      <br>
+      <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+          <label>Username</label>
+          <input type="text" formControlName="user"/><br/>
+          <label>Password</label>
+          <input type="password" formControlName="pass"/><br/>
+          <input type="submit" value="Login" [disabled]="!loginRef.valid"/>
+          <input type="button" value="Sign Up" (click)="loginToRegister()">
+      </form>
+     {{msg}} 
+  </div>
+  <div style="color: white" *ngIf="showRegister">
+    <h2 style = "text-decoration: underline white; 
+    color: white; 
+    text-align: center;">Registration Form</h2>
+    <br>
+    <form [formGroup]="registrationForm" (ngSubmit)="addUser()">
+        <label>First Name</label>
+        <input type="text" formControlName="fname"/><br/>
+        <label>Last Name</label>
+        <input type="text" formControlName="lname"/><br/>
+        <label>Username</label>
+        <input type="text" formControlName="user"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="pass"/><br/>
+        <input type="submit" value="Register" [disabled]="!registrationForm.valid">
+        <input type="button" value="Reset">
+    </form>
+  </div>
+  <div style="color: white" *ngIf="showInfo">
+    <h2 style = "text-decoration: underline white; 
+      color: white; 
+      text-align: center;">My Portfoltio</h2>
+      <br>
+      <div>
+        Welcome {{currUsername}}
+      </div>
+      <form [formGroup]="saveInfo" (ngSubmit)="addContact()">
+        <label>Contact Name: </label>
+        <input type="text" formControlName="contactName"/><br/>
+        <label>PhoneNo: </label>
+        <input type="number" formControlName="phone"/><br/>
+        <input type="submit" value="Save" [disabled]="!saveInfo.valid">
+    </form>
+
+    <h4>Contact Details</h4>
+    <table style="display: table; border-style: solid; text-align:right; width: 200px;">
+      <tr><th>Name</th><th>Phone No.</th></tr>
+      <div *ngFor="let contact of currEmpInformation.portfolio | keyvalue">
+        <tr><td>{{contact.key}}</td><td>{{contact.value}}</td></tr>
+      </div>
+    </table>
+
+  </div>
+</div>
