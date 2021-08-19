@@ -1,0 +1,48 @@
+<div style="display:flex">
+    <div style="display: 50%; padding: 10px;">
+        <h2 style="text-decoration: underline; text-align: center;">To-do-tasks</h2>
+        <form [formGroup]="tasksForm" (ngSubmit)="addTask()" style="border-style: solid;padding: 10px;">
+            <mat-form-field>
+                <mat-label>ID: </mat-label>
+                <input matInput type="text" formControlName="id"/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Name: </mat-label>
+                <input matInput type="text" formControlName="name"/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Task: </mat-label>
+                <input matInput type="text" formControlName="task"/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Deadline: </mat-label>
+                <input matInput type="date" formControlName="deadline"/>
+            </mat-form-field>
+            <br/>
+            <button mat-button type="submit" color="primary" [disabled]="!tasksForm.valid">Submit</button>
+            <button  mat-button type="reset" color="accent">Reset</button>
+        </form>
+    </div>
+    <div style="display: 50%; padding: 10px;">
+        <h2 style="text-decoration: underline; text-align: center;">To-do-list</h2>
+        <table style="border-style:solid; text-align: center;">
+            <tr>
+                <th>EMP ID</th>
+                <th>NAME</th>
+                <th>TASK</th>
+                <th>DEADLINE</th>
+            </tr>
+            <tbody *ngFor="let taskInfo of allTasks">
+                <tr>
+                    <td>{{taskInfo.id}}</td>
+                    <td>{{taskInfo.name}}</td>
+                    <td>{{taskInfo.task}}</td>
+                    <td>{{taskInfo.deadline}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  
+</div>
