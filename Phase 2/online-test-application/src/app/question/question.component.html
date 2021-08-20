@@ -1,0 +1,17 @@
+<div>
+    <form #examForm="ngForm" (ngSubmit)="checkAnswers(examForm)">
+        <div *ngFor="let q of allQuestions"> 
+            <p>Question {{allQuestions.indexOf(q) + 1}}: {{q.question}}</p>
+            Option A: <input type="radio" name={{q.question}} value={{q.answer1}} ngModel>
+            <label>{{q.answer1}}</label><br/>
+            Option B: <input type="radio" name={{q.question}} value={{q.answer2}} ngModel>
+            <label>{{q.answer2}}</label><br/>
+            Option C: <input type="radio" name={{q.question}} value={{q.answer3}} ngModel>
+            <label>{{q.answer3}}</label><br/>
+            Option D: <input type="radio" name={{q.question}} value={{q.answer4}} ngModel>
+            <label>{{q.answer4}}</label><br/>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>

@@ -1,0 +1,12 @@
+[
+    {"question": "5 + 5", "answer1": "10", "answer2":"11", "answer3":"12","answer4":"13", "correctAnswer":"10"},
+    {"question": "5 - 5", "answer1": "1", "answer2":"5", "answer3":"0","answer4":"10", "correctAnswer":"0"},
+    {"question": "10 * 5", "answer1": "20", "answer2":"2", "answer3":"50","answer4":"100", "correctAnswer":"50"},
+    {"question": "20 / 5", "answer1": "20", "answer2":"5", "answer3":"100","answer4":"4", "correctAnswer":"4"},
+    {"question": "7 * 5", "answer1": "35", "answer2":"70", "answer3":"0","answer4":"1", "correctAnswer":"35"},
+    {"question": "8 * 4", "answer1": "2", "answer2":"0", "answer3":"32","answer4":"36", "correctAnswer":"32"},
+    {"question": "9 * 5 + 3", "answer1": "45", "answer2":"72", "answer3":"48","answer4":"90", "correctAnswer":"48"},
+    {"question": "10 / 0", "answer1": "Undefined", "answer2":"0", "answer3":"10","answer4":"1", "correctAnswer":"Undefined"},
+    {"question": "0 / 10", "answer1": "0", "answer2":"1", "answer3":"10","answer4":"Undefined", "correctAnswer":"0"},
+    {"question": "100 / 1", "answer1": "10", "answer2":"1", "answer3":"100","answer4":"1000", "correctAnswer":"100"}
+]
