@@ -34,11 +34,23 @@ export class QuestionComponent implements OnInit {
 
   checkAnswers(examForm:NgForm){
     let enteredAnswers = examForm.value;
-    console.log(enteredAnswers);
-    let corrAnswers:number = 0;
-   /* for(let i = 0; i < enteredAnswers; i++){
+    //console.log(enteredAnswers);
+    let correctAnswers:number = 0;
+    for(let question of this.allQuestions.entries()){
+      //console.log(question[1]);
+      let currQuestion = question[1]["question"];
+      if(question[1]["correctAnswer"] === enteredAnswers[currQuestion]){
+       // console.log("Correct Answer");
+        correctAnswers++;
+      }
+    }
+   // console.log(correctAnswers);
 
-    }*/
+    if(correctAnswers>6){
+      this.scoreMessage = "Result: " + correctAnswers.toString() + "/10 Pass";
+    }
+    else{
+      this.scoreMessage = "Result: " + correctAnswers.toString() + "/10 Fail";
+    }
   }
-
 }
