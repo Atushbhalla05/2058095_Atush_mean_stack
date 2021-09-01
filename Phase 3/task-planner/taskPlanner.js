@@ -31,16 +31,10 @@ let taskPage = `
         <label>Task Id: </label>
         <input type="text" id="deleteTaskId" name="deleteTaskId"><br>
         <input type="submit" value="Delete Task"> 
-    </form>
-    <br>
-   <table id="listTasks" style="border-style: solid;">
-        <tr>
-            <th>EID</th>
-            <th>TID</th>
-            <th>Task</th>
-            <th>Deadline</th>
-        </tr>
-    </table>
+    </form>`
+
+let endPage = `
+<br>
 </body>
 </html>
 `
@@ -48,7 +42,7 @@ let taskPage = `
 
 let server = http.createServer((request,response)=>{
     let urlInfo = url.parse(request.url,true);
-    response.write(taskPage);
+    //response.write(taskPage + endPage);
     let tasksToWrite = [];
     if(urlInfo.path != "/favicon.ico"){
         if(urlInfo.pathname=="/addTask"){
@@ -74,7 +68,8 @@ let server = http.createServer((request,response)=>{
                     console.log(deleteTask.deleteTaskId);
                     if(t.taskId == deleteTask.deleteTaskId){
                         console.log("found tid");
-                        tasks.splice(i,i + 1);
+                        tasks.splice(i,1);
+                        console.log(tasks);
                         file.writeFileSync("taskPlanner.json", JSON.stringify(tasks));
                         break;
                     }
@@ -82,20 +77,28 @@ let server = http.createServer((request,response)=>{
                 tasksToWrite = tasks;
             }
         }
-        let currTable = document.getElementById("listTasks");
-        let i = 0;
+
+        let currTable = `
+        <table id="listTasks" style="border-style: solid;">
+            <tr id="header">
+                <th>EID</th>
+                <th>TID</th>
+                <th>Task</th>
+                <th>Deadline</th>
+            </tr>
+        `;
+        let rows = ``;
         for(let t of tasksToWrite){
-            let row = currTable.insertRow(i);
-            var eidCell = row.insertCell(0);
-            var tidCell = row.insertCell(1);
-            var taskDetails = row.insertCell(2);
-            var deadline = row.insertCell(3);
-            eidCell.innerHTML = tasksToWRite.empId;
-            tidCell.innerHTML = tasksToWRite.taskId;
-            taskDetails.innerHTML = tasksToWRite.task;
-            deadline.innerHTML = tasksToWRite.deadline;
-            i++;
+            rows += `
+            <tr>
+                <td>` + t.empId  +`</td>
+                <td>`+ t.taskId  +`</td>
+                <td>`+ t.task  +`</td>
+                <td>`+ t.deadline  +`</td>
+            </tr>`;
         }
+        currTable += rows + `</table>`;
+        response.write(taskPage + currTable + endPage);
     }
     response.end();
 });
