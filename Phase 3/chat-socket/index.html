@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting With Socket IO</title>
+    <script src="/socket.io/socket.io.js">
+    </script>
+    <script>
+        var socket = io();
+        socket.emit("obj", "Hello Server, I am a Web Socket Client");
+        socket.on("obj1", (msg)=> {
+            console.log(msg);
+        })
+
+        function sendInfo(){
+            let sendInfo = document.getElementById("msg");
+            socket.emit("obj2", sendInfo.value);
+            sendInfo.value = "";
+        }
+        socket.on("obj2", (msg) =>{
+            document.getElementById("history").innerHTML += msg;
+        })
+    </script>
+</head>
+<body>
+    <h2>Chatting With Socket IO</h2>
+    <div style="border-style: solid; width: 300px; height: auto">
+        <h3>Chatting History</h3>
+        <br>
+        <div id="history">
+        </div>
+    </div>
+    <br>
+    Message: <input type="text" id="msg" width="100px"><br>
+    <input type="button" value="Send Message" onclick="sendInfo()">
+</body>
+</html>
